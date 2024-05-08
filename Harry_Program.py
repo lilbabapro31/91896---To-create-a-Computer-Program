@@ -1,5 +1,7 @@
 #Date 9/05/24
 #Author Harry
-#Purpose Demonstrate Gitbhub
+#Purpose Demonstrate Github
 
 print:("Hello world")
+name = input("What is your name?")
+print(name)
