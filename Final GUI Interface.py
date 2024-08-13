@@ -51,12 +51,30 @@ def display_contents():
                 return
 #End message
     result_text.set("First Name: {first_name}, Receipt#: {Receipt#}")
+def setup_bg(canvas):
+        #Placement of logo/image
+        from tkinter import PhotoImage
+        global bg
+        bg = PhotoImage(file="julie party logo.png")
+        bg = bg.subsample(2)
+        canvas.create_image(0, 0, anchor=NW, image=bg)
+        global Background
+        Background = PhotoImage(file="FINAL GUI INTERFACE BG.png")
+        canvas2.create_image(0, 0, anchor=NW, image=Background)
+
+
+
+
 #GUI Title
 root = tk.Tk()
 root.title("Julie's Party Hire store")
 
 root.configure(bg='lightblue')
-
+canvas2 = Canvas(root, width=670, height=450, bg='lightblue', bd=0, highlightthickness=0)
+canvas2.place(x=0, y=0)
+canvas = Canvas(root, width=165, height=135, bg='lightblue', bd=0, highlightthickness=0)
+canvas.place(x=10, y=0)
+setup_bg(canvas)
 #Placement of return button
 Return = Button(root, text = "RETURN", command="???")
 Return.place(x=375,y=320)
@@ -108,8 +126,12 @@ entry_quantity.config(font = ("Comic Sans MS", 14), width=10)
 
 #Placement of title
 title = tk.Label(root, text = "Welcome to Julie's Party Hire store!")
-title.place(x=115,y=45)
+title.place(x=175,y=45)
 title.config(font = ("Comic Sans MS", 19, "bold"), fg= "#454545", bg='lightblue')
+
+
+
+
 
 root.iconbitmap(r"icon.ico")
 
